@@ -68,9 +68,11 @@ const styles = StyleSheet.create({
             fontWeight: 'bold',
             marginTop: 28,
             marginBottom: 12,
+            textAlign: 'center'
         },
         text:{
-            color: '#a1a1a1'
+            color: '#a1a1a1',
+            textAlign: 'center'
         },
         button:{
             position: 'absolute',

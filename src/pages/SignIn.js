@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-nativ
 import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function SignIn(){
+export default function SignIn({ navigation }){
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [senhaVisivel, setSenhaVisivel] = useState(false);
@@ -35,7 +35,7 @@ export default function SignIn(){
         <Text style={styles.title}>Senha</Text>
         <View style={styles.inputArea}>
           <TextInput
-            placeholder="Sua senha"
+            placeholder="Sua_senha"
             style={styles.inputSenha}
             secureTextEntry={!senhaVisivel}
             value={senha}
@@ -62,7 +62,7 @@ export default function SignIn(){
           <Text style={styles.registerText}>Esqueci a senha</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.buttonRegister}>
+        <TouchableOpacity onPress={() => navigation.navigate ('SingUp')} style={styles.buttonRegister}>
           <Text style={styles.registerText}>Não possui uma conta? Cadastre-se</Text>
         </TouchableOpacity>
 
@@ -137,14 +137,15 @@ const styles = StyleSheet.create({
   },
   clearButtonText: {
     color: 'rgb(47, 47, 176)',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   buttonRegister: {
     marginTop: 14,
     alignSelf: 'center'
   },
   registerText:{
-    color: '#a1a1a1',
+    color: 'rgb(47, 47, 176)',
+    fontWeight: 'bold'
   },
   buttonesquecisenha: {
     marginTop: 14,
